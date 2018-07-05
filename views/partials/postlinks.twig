@@ -1,0 +1,16 @@
+{% if next or previous %}
+    <div class="post_links">
+        <div class="links_wrapper">
+            <div class="link prev{% if not previous %} nocontent{% endif %}">
+                {% if previous %}
+                    <a href="{{previous.link}}" class="paging__next">{{fn('wp_trim_content', previous.title, '...', 20)}}</a>
+                {% endif %}
+            </div>
+            <div class="link next{% if not next %} nocontent{% endif %}">
+                {% if next %}
+                    <a href="{{next.link}}" class="paging__prev">{{fn('wp_trim_content', next.title, '...', 20)}}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}

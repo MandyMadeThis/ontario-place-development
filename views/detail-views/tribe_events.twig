@@ -1,0 +1,87 @@
+{% extends "base.twig" %}
+{% block content %}
+
+    <div class="event" id="event-{{ post.ID }}">
+        {% include 'partials/postlinks.twig' with {'next': post.next, 'previous': post.prev} %}
+        <div class="event__header">
+            <div class="grid">
+                {% if post.thumbnail %}
+                    <div class="grid__12 grid__4--md">
+                        <div class="hero_image" style="background-image: url({{post.thumbnail.src}});"></div>
+                    </div>
+                    <div class="grid__12 grid__8--md">
+                    {% endif %}
+                    <div class="event__header__main">
+                        <h2>{{post.title}}</h2>
+                        <span class="event__header__address">
+                            {% if post._EventAllDay != 'yes' %}
+                                {{fn('localize_date', post.EventStartDate, '%A %B %e, %Y %l:%M%P %Z')}}
+                            {% else %}
+                                {{fn('localize_date', post.EventStartDate, '%A %B %e, %Y')}}
+                            {% endif %}
+                        </span>
+                        <div class="event__header__links">
+                            <a class="btn btn--white" href="{{fn('esc_url', fn('tribe_get_gcal_link', post.ID))}}" target="_blank">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>{{fn('pll_e', 'Google Calendar')}}</a>
+                            <a class="btn btn--white" href="{{fn('esc_url', fn('tribe_get_single_ical_link'))}}" target="_blank">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>{{fn('pll_e', 'iCal Export')}}</a>
+                            {% if post._EventURL %}
+                                <a class="btn btn--white" href="{{fn('esc_url', post._EventURL)}}" target="_blank">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>{{fn('pll_e', 'Event URL')}}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% if post.thumbnail %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% if post.content %}
+            <div class="event__info">
+                <h2>{{fn('pll_e', 'Event Details')}}</h2>
+                <div class="post_content">{{ post.content }}</div>
+            </div>
+        {% endif %}
+        <div class="event__meta">
+            <div class="grid">
+                <div class="grid__12 grid__4--md">
+                    <h2>{{fn('pll_e', 'Event Dates')}}</h2>
+                    <div class="item">
+                        <span class="item__header">
+                            {{fn('pll_e', 'Date')}}:
+                        </span>
+                        <span class="item__value">
+                            {{fn('localize_date', post.EventStartDate, '%A %B %e, %Y')}}
+                        </span>
+                    </div>
+                    {% if post._EventAllDay != 'yes' %}
+                        <div class="item">
+                            <span class="item__header">
+                                {{fn('pll_e', 'Time')}}:
+                            </span>
+                            <span class="item__value">
+                                {{fn('localize_date', post.EventStartDate, '%l:%M%P %Z')}}
+                            </span>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="grid__12 grid__4--md">
+                    <h2>{{fn('pll_e', 'Location')}}</h2>
+                    <div class="tribe-venue-location">
+                        <address class="tribe-events-address">
+                            {{fn('tribe_get_full_address', post.ID, true)}}
+                        </address>
+                        <div>
+                            {% if fn('tribe_show_google_map_link', post.ID) %}
+                                {{fn('tribe_get_map_link_html', post.ID) }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__12 grid__4--md"></div>
+            </div>
+        </div>
+        <div class="google_map">{{fn('tribe_get_embedded_map', post.ID)}}</div>
+    </div>
+    {% include 'partials/socialshare.twig' %}
+{% endblock %}

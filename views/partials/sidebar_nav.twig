@@ -1,0 +1,19 @@
+{% for child in item.get_children %}
+    <li class="sidebar__item {% if child.get_children and child.link == post.link or child.link == fn('get_permalink', options.post_type_homes[post.post_type]) %} open{% endif %}">
+        <a href="{{ child.link }}" {% if child.link == post.link or child.link == fn('get_permalink', options.post_type_homes[post.post_type]) %} class="open" {% endif %}>
+            {% if child.get_children %}
+                <span class="toggle">
+                    <span class="menu__icon">
+                        <span style="display:none;">Expand</span>
+                    </span>
+                </span>
+            {% endif %}
+            <span>{{ child.title }}</span>
+        </a>
+        {% if child.get_children %}
+            <ul class="sidebar__nav__sub">
+                {% include 'partials/sidebar_nav.twig' with {'item': child} %}
+        </ul>
+    {% endif %}
+</li>
+{% endfor %}

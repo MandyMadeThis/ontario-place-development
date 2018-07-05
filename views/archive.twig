@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+{% block content %}
+    <div class="content-wrapper">
+        <div class="content">
+            <article class="post-type-page">
+                <header class="article-header">
+                    <h1 class="article-title">
+                        <a href="{{blog_page.link}}">{{blog_page.title}}</a>
+                    </h1>
+                </header>
+                <div class="article-content-rtl">
+                    <main class="article-main {% if not page_sidebar %}no-sidebar-mod{% endif %}">
+                        <div class="posts-control">
+                            <h2 class="posts-control-title">{{title}}</h2>
+                        </div>
+                        <div class="posts" data-post-count="{{posts_count}}">
+                            {% for post in posts %}
+                                {% include['tease-' ~ post.post_type ~ '.twig',
+                                    'tease.twig'] %}
+                            {% endfor %}
+                            {{function('do_shortcode', '[ajax_load_more post_type="post" posts_per_page="2" offset="2" pause="true" scroll="false" button_label="Show More Articles"]')}}
+                        </div>
+                    </main>
+                    <!-- /article-main -->
+                    {% if post_sidebar %}
+                        <aside class="article-sidebar">
+                            {% block post_sidebar %}
+                                {{ post_sidebar }}
+                            {% endblock %}
+                        </aside>
+                        <!-- /article-sidebar -->
+                    {% endif %}
+                </div>
+                <!-- article-content -->
+            </article>
+        </div>
+        <!-- /content -->
+    </div>
+    <!-- /content-wrapper -->
+{% endblock %}

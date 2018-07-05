@@ -1,0 +1,9 @@
+{% if widget_posts %}
+    <div class="posts grid widget--post {{ widget_post_types | join(' ') }}">
+        {% for p in widget_posts %}
+            {% include["list-views/widget-#{p.post_type}.twig",
+                "list-views/#{p.post_type}.twig",
+                'list-views/post.twig'] with {'p': p, 'button_label': widget_button_label, 'styled_view': widget_card_view} %}
+        {% endfor %}
+    </div>
+{% endif %}

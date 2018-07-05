@@ -1,0 +1,7 @@
+<ul class="footerSocial">
+    {% for item in menu.items %}
+        <li class="footerSocial__item">
+            <a href="{{ item.link }}" class="social social--{{ item.socialProvider }}" target="_blank" aria-label="{{ item.socialProvider }}"></a>
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+{% block content %}
+    <div class="post" id="post-{{ post.ID }}">
+        {% include 'partials/postlinks.twig' with {'next': post.next, 'previous': post.prev} %}
+        <h1 class="post__title">{{post.title}}</h1>
+        {% if post.content %}
+            <div class="post_content">{{ post.content }}</div>
+        {% endif %}
+        {% if post.thumbnail %}
+            <div class="hero_image" style="background-image: url({{post.thumbnail.src}});"></div>
+        {% endif %}
+    </div>
+    {% include 'partials/socialshare.twig' %}
+{% endblock %}

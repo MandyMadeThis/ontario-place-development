@@ -1,0 +1,60 @@
+<div class="subscribe">
+    <div class="container">
+        <div class="subscribe__prefix">
+            <h2>{{fn('pll_e', "Always know what's going on")}}</h2> <a href="#" aria-label="{{fn('pll_e', 'Open Subscribe Form')}}" class="btn btn--white">{{fn('pll_e', 'Sign-up for our newsletter')}}</a> </div> <div class="subscribe__embed grid"> <a href="#"
+                class="subscribe__embed__close" aria-label="{{fn('pll_e', 'Close Subscribe Form')}}">
+                <svg
+                    version="1.1"
+                    id="df5cdb86-c7d6-4cbc-8cbc-8105239455c9"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 46.74 46.74"
+                    style="enable-background:new 0 0 46.74 46.74; height: 25px;"
+                    xml:space="preserve">
+                    <title>menu-close-white</title>
+                    <path
+                        style="fill:#FFFFFF;"
+                        d="M39.05,1.32L23.37,17L7.68,1.32C5.99-0.5,3.14-0.6,1.32,1.1S-0.6,5.64,1.1,7.46
+            c0.07,0.08,0.15,0.15,0.22,0.22L17,23.37L1.32,39.05c-1.69,1.82-1.59,4.67,0.22,6.36c1.73,1.61,4.41,1.61,6.14,0l15.69-15.68
+            l15.68,15.69c1.82,1.69,4.67,1.59,6.36-0.22c1.61-1.73,1.61-4.41,0-6.14L29.73,23.37L45.42,7.68c1.69-1.82,1.59-4.67-0.22-6.36
+            C43.47-0.29,40.79-0.29,39.05,1.32L39.05,1.32z"></path>
+                </svg>
+            </a>
+            <div class="grid__12 grid__6--md">
+                {% if fn('pll_current_language', 'slug')is same as('fr') %}
+                    {{options.french_subscription_blurb}}
+                {% else %}
+                    {{options.english_subscription_blurb}}
+                {% endif %}
+            </div>
+            <div id="mc_embed_signup" class="subscribe__embed__form grid__12 grid__6--md">
+                <form action="{% if fn('pll_current_language', 'slug')is same as('fr') %}{{options.french_mailchimp_subscription_link}}{% else %}{{options.english_mailchimp_subscription_link}}{% endif %}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+                    <div id="mc_embed_signup_scroll">
+                        <div class="mc-field-group">
+                            <label for="mce-FNAME" style="display: none">{{fn('pll_e', 'First Name')}}
+                            </label>
+                            <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="{{fn('pll_e', 'First Name')}}">
+                        </div>
+                        <div class="mc-field-group">
+                            <label for="mce-LNAME" style="display: none">{{fn('pll_e', 'Last Name')}}
+                            </label>
+                            <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="{{fn('pll_e', 'Last Name')}}">
+                        </div>
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL" style="display: none">{{fn('pll_e', 'Email Address')}}
+                            </label>
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="{{fn('pll_e', 'Email Address')}}">
+                        </div>
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+                        <div class="clear"><input type="submit" value="{{fn('pll_e', 'Subscribe')}}" name="subscribe" id="mc-embedded-subscribe" class="btn btn--white"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

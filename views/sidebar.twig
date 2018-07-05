@@ -1,0 +1,11 @@
+<div class="sidebar">
+  {% if sidebar_menu %}
+    <div class="sidebar__nav">
+      <ul class="sidebar__nav__sub">
+        <li><a href="{{ sidebar_menu.link }}" {% if sidebar_menu.link == post.link or sidebar_menu.link == fn('get_permalink', options.post_type_homes[post.post_type]) %} class="open"{% endif %}>{{ sidebar_menu.title }}</a></li>
+        {% include 'partials/sidebar_nav.twig' with { 'item': sidebar_menu } %}
+      </ul>
+	  {% if page_sidebar %} {{page_sidebar}}{% endif %}
+    </div>
+  {% endif %}
+</div>

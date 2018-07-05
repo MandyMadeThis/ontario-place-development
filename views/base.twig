@@ -1,0 +1,85 @@
+{% include "partials/html-header.twig" %}
+{% block head %}{% endblock %}
+</head>
+<body
+class="{{body_class}}{% if post and not post.get_field('colored_content_block') and not post.get_field('accordion') and not post.get_field('show_subscription') and not has_calendar and post.post_type != 'tribe_events' and not sidebar_menu is empty %} sidebar {% endif %}"
+data-source="base.twig">
+<div class="menu__pageWrapper">
+    <div class="menu__pageWrapper__inner">
+        {% include "elements/header.twig" %}
+        {% if not is_front_page and not fn('is_search')and not fn('is_404') %}
+            {% include "partials/breadcrumbs.twig" %}
+        {% endif %}
+        <section id="before-content" class="before-cnt">
+            <div class="wrapper">
+                {{before_content}}
+            </div>
+        </section>
+        <section id="content" class="content" role="main">
+            <div class="container">
+                {% if post and not post.get_field('colored_content_block')and not post.get_field('accordion')and not post.get_field('show_subscription') and not has_calendar and post.post_type != 'tribe_events' and not sidebar_menu is empty %}
+                    <div class="grid">
+                        <div class="grid__12 grid__3--md">
+                            {% include 'sidebar.twig' %}
+                        </div>
+                        <div class="grid__12 grid__9--md">
+                        {% endif %}
+                        {% block content %}
+                            Sorry, no content
+                        {% endblock %}
+                        <!-- /container -->
+                        {% if post.ninja_forms_form %}
+                            <div class="container">
+                                {{fn('do_shortcode', '[ninja_forms id='~post.ninja_forms_form~']')}}
+                            </div>
+                        {% endif %}
+                        {% if post and not post.get_field('colored_content_block')and not post.get_field('accordion')and not post.get_field('show_subscription') and not has_calendar and post.post_type != 'tribe_events' and not sidebar_menu is empty %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            {% if post.get_field('colored_content_block') %}
+                {% include "partials/colored-content-block.twig" with {"blocks": post.get_field('colored_content_block')} %}
+                {% endif%}
+                {% if post and post.get_field('accordion') %}
+                    {% include "elements/accordion.twig" with {accordion: post.get_field('accordion')} %}
+                {% endif %}
+                {% if post.get_field('listing_widget') %}
+                    <div class="post__listing">
+                        <div class="container">
+                            {% for widget in post.get_field('listing_widget') %}
+                                {% if widget.load_more %}
+                                    {{ fn('do_shortcode', "[widget widget_name=\"Post_Listing_Widget\" use_page_args=\"true\" index=\"#{loop.index0}\" post=\"#{post.ID}\"]") }}
+                                {% else %}
+                                    {% if widget.label %}
+                                        <h2 class="title--styled">{{widget.label}}</h2>
+                                    {% endif %}
+                                    <div>
+                                        {{ fn('do_shortcode', "[widget widget_name=\"Upcoming_Posts_Widget\" use_page_args=\"true\" index=\"#{loop.index0}\" post=\"#{post.ID}\"]") }}
+                                    </div>
+                                {% endif %}
+                                {% if widget.link and widget.link_label %}
+                                    <div class="text-center">
+                                        <a href="{{widget.link}}" class="view-all-btn">{{widget.link_label}}</a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+                {% if post.get_field('show_subscription') %}
+                    {% include "partials/subscribe.twig" with {'options': options} %}
+                {% endif %}
+                <!-- /wrapper -->
+            </section>
+            <!-- /cnt -->
+            <section id="after-content" class="after-cnt">
+                {{ after_content }}
+            </section>
+            {% include "elements/footer.twig" %}
+        </div>
+        {{function('load_footer_scripts')}}
+        {{function('wp_footer')}}
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

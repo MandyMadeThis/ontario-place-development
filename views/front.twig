@@ -1,0 +1,15 @@
+{% extends "base.twig" %}{% block before_content %}{% endblock %}
+{% block content %}
+    <article id="post-{{ post.ID }}">
+        <main>
+            <div class="post-content">
+                {% if post.thumbnail %}
+                    <div class="thumbnail">
+                        <img src="{{post.thumbnail.src}}" alt="{{post.thumbnail.alt}}" />
+                    </div>
+                {% endif %}
+                <div class="post_content">{{ post.content }}</div>
+            </div>
+        </main>
+    </article>
+{% endblock %}

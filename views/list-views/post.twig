@@ -1,0 +1,17 @@
+<div class="post__item">
+    {% if p.thumbnail %}
+        <div class="post__item__media">
+            <img src="{{p.thumbnail.src('medium')}}" alt="{{p.thumbnail.alt}}">
+        </div>
+    {% endif %}
+    <div class="post__item__content {% if not p.thumbnail %}no-media{% endif %}">
+        <div class="post__item__wrapper">
+            <h3 class="post__item__title">
+                <a href="{{ p.link }}">{{ p.title }}</a>
+            </h3>
+            <div class="post__item__link">
+                <a href="{{ p.link }}" class="btn btn--white">{{fn('pll_e', 'Read More')}}</a>
+            </div>
+        </div>
+    </div>
+</div>

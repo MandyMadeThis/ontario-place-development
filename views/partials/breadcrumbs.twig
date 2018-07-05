@@ -1,0 +1,12 @@
+<div class="breadcrumbs">
+    <div class="container">
+        {% for breadcrumb in fn('get_breadcrumbs', post, options.post_type_homes) %}
+            {% if breadcrumb.url %}
+                <a href="{{ breadcrumb.url }}">{% else %}<span>{% endif %}{{ breadcrumb.title }}{% if breadcrumb.url %}</a>{% else %}</span>
+            {% endif %}
+            {% if not loop.last %}
+                <span class="divider"> / </span>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

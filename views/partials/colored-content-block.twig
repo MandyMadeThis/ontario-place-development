@@ -1,0 +1,19 @@
+{% if user or post.post_status =='publish' %}
+{% if blocks %}
+    <ul class="coloredContentBlocks">
+        {% for block in blocks %}
+            <li class="coloredContentBlocks__block" style="background-color: {{block.color}}">
+                <div class="container">
+                    <h2 class="coloredContentBlocks__block__title">{{block.title}}</h2>
+                    <div class="coloredContentBlocks__block__content">{{block.body}}</div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+	
+{% endif %}
+
+{% endif %}
+
+
+

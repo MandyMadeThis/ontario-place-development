@@ -1,0 +1,29 @@
+{% extends "tease.twig" %}
+{% block content %}
+    <div class="tease-featured-image">
+        {% if post.thumbnail.src %}
+            <img src="{{post.thumbnail.src('recent_post_wide')}}" class="list-only">
+        {% endif %}
+    </div>
+    <div class="tease-content">
+        <h2 class="tease-title">
+            <a href="{{post.link}}">{{post.title}}</a>
+        </h2>
+        <div class="tease-preview">
+            {{post.get_preview(25, false, '')}}
+        </div>
+        {% if post.terms('tags') %}
+            <div class="tease-tags">
+                {{__('Topic: ', 'ontario-place')}}
+                <ul class="tease-tags-list">
+                    {% for term in post.terms('tags') %}
+                        <li>
+                            <a href="{{term.link}}">{{term.name}}</a>
+                            {% if not loop.last %},{% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

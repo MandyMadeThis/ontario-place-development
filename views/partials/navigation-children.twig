@@ -1,0 +1,19 @@
+{% if item.get_children %}
+    <ul class="menu__nav--child nav-menu-primary">
+        {% for child in item.get_children %}
+            <li class="menu__item menu-item">
+                <a href="{{child.link}}" class="">
+                    {% if child.get_children %}
+                        <span class="toggle">
+                            <span class="menu__icon"><span style="display:none;">Expand</span></span>
+                        </span>
+                    {% endif %}
+                    {{child.title}}
+                </a>
+                {% if child.get_children %}
+                    {% include "partials/navigation-children.twig" with {'item': child} %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

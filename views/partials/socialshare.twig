@@ -1,0 +1,14 @@
+<article class="social-share">
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{post.link|escape('url')}}" class="facebook" target="_blank">
+        <div class="icon">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+        </div>
+        <div class="text">{{fn('pll_e', 'Share on Facebook')}}</div>
+    </a>
+    <a href="https://twitter.com/intent/tweet?text={{post.title|escape('url')}}%20{{post.link|escape('url')}}" class="twitter" target="_blank">
+        <div class="icon">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+        <div class="text">{{fn('pll_e', 'Share on Twitter')}}</div>
+    </a>
+</article>
