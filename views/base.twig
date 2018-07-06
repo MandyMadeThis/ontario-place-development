@@ -1,8 +1,7 @@
 {% include "partials/html-header.twig" %}
 {% block head %}{% endblock %}
 </head>
-<body
-class="{{body_class}}{% if post and not post.get_field('colored_content_block') and not post.get_field('accordion') and not post.get_field('show_subscription') and not has_calendar and post.post_type != 'tribe_events' and not sidebar_menu is empty %} sidebar {% endif %}"
+<body class="{{body_class}}{% if post and not post.get_field('colored_content_block') and not post.get_field('accordion') and not post.get_field('show_subscription') and not has_calendar and post.post_type != 'tribe_events' and not sidebar_menu is empty %} sidebar {% endif %}"
 data-source="base.twig">
 <div class="menu__pageWrapper">
     <div class="menu__pageWrapper__inner">

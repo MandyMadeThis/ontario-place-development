@@ -33,8 +33,10 @@
         </ul>
       </nav>
     </div>
+    {% include "elements/menu.twig" %}
   </header>
 </div>
+
 <!-- /header -->
 {% if post._slider %}
   {% set slider_name = fn("get_page_slider", post.get_field("slider")) %}
