@@ -1,0 +1,30 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #001E61;
+}
+
+@media (min-width: 476px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  padding-top: 80px;
+  margin: 0;
+}
+
+@media (min-width: 956px) {
+  body {
+    padding-top: 100px;
+  }
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}

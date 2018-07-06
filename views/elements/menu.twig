@@ -1,21 +1,24 @@
 <div class="menu__pageOverlay"></div>
 <div class="menu">
-    <div class="menu__header">
-
-        <ul class="nav-menu nav-menu-lang">
-        {% for language in menu_language_switch %}<li class="menu-item{% if language.active %} active{% endif %}"><a href="{{language.url}}" {% if language.active %} class="active" {% endif %}>{{language.name}}</a></li>{% endfor %}
-        </ul>
-        <a href="#" class="menu__close">
-            <svg version="1.1" id="df5cdb86-c7d6-4cbc-8cbc-8105239455c9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 46.74 46.74" style="enable-background:new 0 0 46.74 46.74;" xml:space="preserve">
-                <title>menu-close-white</title>
-                <path
-                    style="fill:#FFFFFF;"
-                    d="M39.05,1.32L23.37,17L7.68,1.32C5.99-0.5,3.14-0.6,1.32,1.1S-0.6,5.64,1.1,7.46
-c0.07,0.08,0.15,0.15,0.22,0.22L17,23.37L1.32,39.05c-1.69,1.82-1.59,4.67,0.22,6.36c1.73,1.61,4.41,1.61,6.14,0l15.69-15.68
-l15.68,15.69c1.82,1.69,4.67,1.59,6.36-0.22c1.61-1.73,1.61-4.41,0-6.14L29.73,23.37L45.42,7.68c1.69-1.82,1.59-4.67-0.22-6.36
-C43.47-0.29,40.79-0.29,39.05,1.32L39.05,1.32z"/>
-            </svg>
-        </a>
+  <div class="menu__header">
+    <ul class="nav-menu nav-menu-lang">
+    {% for language in menu_language_switch %}
+      <li class="menu-item{% if language.active %} active{% endif %}">
+        <a href="{{language.url}}" {% if language.active %} class="active" {% endif %}>{{language.name}}</a>
+      </li>
+    {% endfor %}
+    </ul>
+    <a href="#" class="menu__close">
+      <svg version="1.1" id="df5cdb86-c7d6-4cbc-8cbc-8105239455c9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 46.74 46.74" style="enable-background:new 0 0 46.74 46.74;" xml:space="preserve">
+        <title>menu-close-white</title>
+        <path
+          style="fill:#FFFFFF;"
+          d="M39.05,1.32L23.37,17L7.68,1.32C5.99-0.5,3.14-0.6,1.32,1.1S-0.6,5.64,1.1,7.46
+          c0.07,0.08,0.15,0.15,0.22,0.22L17,23.37L1.32,39.05c-1.69,1.82-1.59,4.67,0.22,6.36c1.73,1.61,4.41,1.61,6.14,0l15.69-15.68
+          l15.68,15.69c1.82,1.69,4.67,1.59,6.36-0.22c1.61-1.73,1.61-4.41,0-6.14L29.73,23.37L45.42,7.68c1.69-1.82,1.59-4.67-0.22-6.36
+          C43.47-0.29,40.79-0.29,39.05,1.32L39.05,1.32z"/>
+        </svg>
+      </a>
     </div>
     {% include "partials/navigation.twig" with {'menu': menu} %}
-</div>
+  </div>

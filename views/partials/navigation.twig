@@ -1,17 +1,17 @@
 <nav class="menu__nav">
-    <ul class="menu__nav--primary nav-menu-primary">
-        {% for item in menu.items %}
-            <li class="menu__item menu-item">
-                <a href="{{item.link}}" class="">
-                    {% if item.get_children %}
-                        <span class="toggle">
-                            <span class="menu__icon"><span style="display:none;">{{fn('pll_e', 'Expand')}}</span></span>
-                        </span>
-                    {% endif %}
-                    {{item.title}}
-                </a>
-                {% include "partials/navigation-children.twig" with {'item': item} %}
-            </li>
-        {% endfor %}
-    </ul>
+  <ul class="menu__nav--primary nav-menu-primary">
+    {% for item in menu.items %}
+      <li class="menu__item menu-item">
+        <a href="{{item.link}}" class="">
+          {% if item.get_children %}
+            <span class="toggle">
+              <span class="menu__icon"><span style="display:none;">{{fn('pll_e', 'Expand')}}</span></span>
+            </span>
+          {% endif %}
+          {{item.title}}
+        </a>
+        {% include "partials/navigation-children.twig" with {'item': item} %}
+      </li>
+    {% endfor %}
+  </ul>
 </nav>

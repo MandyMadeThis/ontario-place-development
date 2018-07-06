@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "http://ontarioplace.test/"
+        proxy: "http://ontario-place-development.test//"
     });
 });
 
@@ -18,7 +18,7 @@ gulp.task('bs-reload', function () {
 
 
 gulp.task('styles', function(){
-  gulp.src(['src/style.scss'])
+  gulp.src(['src/scss/style.scss'])
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
@@ -35,6 +35,6 @@ gulp.task('styles', function(){
 
 
 gulp.task('default', ['browser-sync'], function(){
-  gulp.watch("src/style.scss", ['styles']);
+  gulp.watch("src/scss/**/*.scss", ['styles']);
   gulp.watch("*.php", ['bs-reload']);
 });

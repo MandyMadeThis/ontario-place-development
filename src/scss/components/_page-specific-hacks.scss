@@ -1,0 +1,25 @@
+//PAGE: /whatson
+#post-5228,
+#post-5392 {
+  @media (max-width: 956px) {
+    table,tbody { 
+      display: block; 
+    }
+
+    tr {
+      td {
+        display: inline-block;
+
+        &:nth-of-type(even) {
+          width: calc(100% - 120px);
+        }
+      }
+    }
+  }
+}
+
+// Page: ontario150-festivals/
+.page-id-148 .sidebar,
+.page-id-464 .sidebar {
+  display: none;
+}
