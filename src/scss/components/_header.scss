@@ -1,56 +1,68 @@
-.header {
-  transition: all 100ms ease;
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: $white;
-  font-family: Roboto, Roboto, serif;
-  font-weight: 700;
-  padding: 20px;
-
-  li,
-  ul {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  .header {
+    transition: all 100ms ease;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
   }
 
-  a {
-    text-decoration: none;
-    color: $navy;
-    display: inline-block;
-
-    &.active,
-    &:hover {
-      color: $navy;
-    }
-  }
-}
-
-.header__bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .nav-menu-toggle {
-    height: 25px;
-
-    @media (min-width: 956px) {
-      height: auto;
-    }
-  }
-
-  .header__toggle {
-    position: relative;
+  .header__bar {
+    font-family: Roboto, Roboto, serif;
+    font-weight: 700;
+    height: 80px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
-    &:hover span {
+    @media (min-width: 956px) {
+      height: 100px;
+    }
+
+    a {
+      text-decoration: none;
       color: $navy;
+      display: inline-block;
+
+      &.active,
+      &:hover {
+        color: $navy;
+      }
+    }
+
+    .nav-menu-toggle {
+      height: 25px;
+
+      @media (min-width: 956px) {
+        height: auto;
+      }
+    }
+
+    .header__toggle {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &:hover span {
+        color: $navy;
+
+        svg {
+          fill: $navy;
+        }
+      }
+    }
+
+    .header__toggle__icon {
+      width: 30px;
+      height: 25px;
+
+      @media (min-width: 956px) {
+        width: 25px;
+        height: 21px;
+        margin-left: 0.5rem;
+      }
 
       svg {
         fill: $navy;
@@ -58,98 +70,87 @@
     }
   }
 
-  .header__toggle__icon {
-    width: 30px;
-    height: 25px;
+  .header__logo {
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    width: 200px;
+    height: 100%;
 
     @media (min-width: 956px) {
-      width: 25px;
-      height: 21px;
-      margin-left: 0.5rem;
+      max-width: 300px;
+      width: 300px;
     }
 
     svg {
-      fill: $navy;
+      width: 90%;
+
+      @media (min-width: 956px) {
+        width: 100%;
+      }
     }
   }
-}
-
-.header__logo {
-  display: flex;
-  align-items: center;
-  max-width: 200px;
-  width: 200px;
-  height: 100%;
-
-  @media (min-width: 956px) {
-    max-width: 300px;
-    width: 300px;
-  }
-
-  svg {
-    width: 90%;
-
-    @media (min-width: 956px) {
-      width: 100%;
-    }
-  }
-}
 
 
-.header__toggle__name {
-  display: none;
-
-  @media (min-width: 956px) {
-    display: block;
-  }
-}
-
-.header__bar__nav {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-
-  .nav-menu-lang {
+  .header__toggle__name {
     display: none;
 
-    @media (min-width: 796px) {
+    @media (min-width: 956px) {
+      display: block;
+    }
+  }
+
+
+
+  .header__bar__nav {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+
+    li,
+    ul {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-menu-lang {
+      display: none;
+
+      @media (min-width: 796px) {
+        display: block;
+        margin-right: 2rem;
+      }
+
+      li + li:before {
+        content: " | ";
+      }
+    }
+  }
+
+  .nav-menu-lang {
+    a {
+      color: $teal;
+    }
+
+    a.active {
+      color: $navy;
+    }
+  }
+
+
+  // IE: Fixes
+  @media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .header__logo {
       display: block;
     }
 
-    li + li:before {
-      content: " | ";
+    .header__bar .nav-menu-toggle {
+      height: 25px;
+    }
+
+    .header__bar .nav-menu-toggle .header__toggle__icon {
+      margin-top: 5px;
     }
   }
-
-  .nav-menu-toggle {
-    @media (min-width: 796px) {
-      display: none;
-    }
-  }
-}
-
-.nav-menu-lang {
-  a {
-    color: $teal;
-  }
-
-  a.active {
-    color: $navy;
-  }
-}
-
-
-// IE: Fixes
-@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .header__logo {
-    display: block;
-  }
-
-  .header__bar .nav-menu-toggle {
-    height: 25px;
-  }
-
-  .header__bar .nav-menu-toggle .header__toggle__icon {
-    margin-top: 5px;
-  }
-}
