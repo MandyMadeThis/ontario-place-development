@@ -28,16 +28,16 @@ h6 {
   font-family: Roboto, Roboto, serif;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-weight: 500;
-
-  .content-wrapper & {
-    font-weight: 700;
-  }
+  font-weight: 600;
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 600;
+
+  @media (min-width: 796px) {
+    font-size: 3rem;
+  }
 }
 
 h2 {
@@ -82,7 +82,7 @@ a:hover {
 }
 
 .font-bold {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 hr {
