@@ -51,10 +51,11 @@
                   {% else %}
                     {% if widget.label %}
                       <h2 class="title--styled">{{widget.label}}</h2>
+                      <hr>
                     {% endif %}
-                    <div>
-                      {{ fn('do_shortcode', "[widget widget_name=\"Upcoming_Posts_Widget\" use_page_args=\"true\" index=\"#{loop.index0}\" post=\"#{post.ID}\"]") }}
-                    </div>
+                  
+                    {{ fn('do_shortcode', "[widget widget_name=\"Upcoming_Posts_Widget\" use_page_args=\"true\" index=\"#{loop.index0}\" post=\"#{post.ID}\"]") }}
+  
                   {% endif %}
                   {% if widget.link and widget.link_label %}
                     <div class="text-center">

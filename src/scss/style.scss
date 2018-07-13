@@ -1,6 +1,7 @@
 // BASE STYLES
 @import "base/variables";
 @import "base/base";
+@import "base/grid";
 @import "base/typography";
 
 // WHOLE CSS OUTPUT - NEEDS SEPERATION
@@ -13,3 +14,4 @@
 @import "components/hero";
 @import "components/footer";
 @import "components/accordion";
+@import "components/post-listing";

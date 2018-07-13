@@ -1,20 +1,10 @@
-<div class="post__item">
-    {% if p.thumbnail %}
-        <div class="post__item__media">
-            <img src="{{p.thumbnail.src('medium')}}" alt="{{p.thumbnail.alt}}">
-        </div>
-    {% endif %}
-    <div class="post__item__content {% if not p.thumbnail %}no-media{% endif %}">
-        <div class="post__item__wrapper">
-            <div class="post__item__date">
-                {{ p.EventStartDate | date('F j, Y') }}
-            </div>
-            <h3 class="post__item__title">
-                <a href="{{ p.link }}">{{ p.title }}</a>
-            </h3>
-            <div class="post__item__link">
-                <a href="{{ p.link }}" class="btn btn--white">{{fn('pll_e', 'Read More')}}</a>
-            </div>
-        </div>
-    </div>
-</div>
+<a href="{{ p.link }}" class="post__item">
+{% if p.thumbnail %}
+  <div class="post__item__media">
+    <img src="{{p.thumbnail.src('medium')}}" alt="{{p.thumbnail.alt}}">
+  </div>
+{% endif %}
+  <div class="post__item__date">{{ p.EventStartDate | date('F j, Y') }}</div>
+  <h3 class="post__item__title">{{ p.title }}</h3>
+  <div class="post__item__link" class="btn">{{fn('pll_e', 'Read More')}}</div>
+</a>

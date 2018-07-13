@@ -1,5 +1,5 @@
 {% if upcoming_posts %}
-    <div class="posts grid grid--verticalGutter  {{ upcoming_post_types | join(' ') }}">
+    <div class="posts upcoming-posts {{ upcoming_post_types | join(' ') }}">
         {% for p in upcoming_posts %}
             {% include["list-views/upcoming-#{p.post_type}.twig",
                 "list-views/#{p.post_type}.twig",

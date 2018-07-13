@@ -1,0 +1,100 @@
+.post__listing {
+
+  .view-all-btn {
+    display: inline-block;
+    border: 2px solid;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 250ms ease;
+    padding: 0.8rem 1rem;
+  }
+
+  .view-all-btn {
+    background-color: $teal; 
+    color: #fff;
+    margin: 25px auto 50px;
+
+    @media (min-width: 956px) {
+      margin: 50px auto;
+    }
+    
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: $teal;
+    }
+  }
+}
+
+.upcoming-posts {
+  @media (min-width: 956px) {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .post__item {
+    text-align: center;
+    padding: 25px;
+    border: 2px solid $navy;
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    transition: $base-trans;
+    display: block;
+
+    @media (min-width: 956px) {
+      margin: 0;
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      > * {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  .post__item + .post__item {
+    margin-top: 25px;
+    @media (min-width: 956px) {
+      margin-top: 0;
+      margin-left: 25px;
+    }
+  }
+
+  .post__item__date {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $navy;
+  }
+
+  .post__item__title {
+    color: $navy;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .post__item__link {
+    text-transform: uppercase;
+    background-color: $navy; 
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    transition: $base-trans;
+    padding: 0.6rem 0.8rem;
+    display: inline-block;
+    align-self: flex-end;
+  }
+}
+
+.post__item:hover {
+  background-color: $navy;
+
+  .post__item__title,
+  .post__item__date {
+    color: #FFF;
+  }
+}

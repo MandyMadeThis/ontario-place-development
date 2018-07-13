@@ -193,4 +193,50 @@
   }
 }
 
+.menu__pageOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 299;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+}
 
+.menu__close {
+  width: 25px;
+  height: 25px;
+
+  @media (min-width: 796px) {
+    align-self: flex-end;
+  }
+}
+
+body.menu--open {
+  overflow: hidden;
+}
+
+body.menu--open .menu__pageOverlay {
+  display: block;
+  opacity: 1;
+}
+
+body.menu--open .menu {
+  transform: translateX(0);
+}
+
+@keyframes menu {
+  0%,
+  1% {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  100%,
+  99% {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
