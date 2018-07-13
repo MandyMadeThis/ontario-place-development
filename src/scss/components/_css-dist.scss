@@ -85,8 +85,8 @@ table {
 .social {
   transition: all 100ms ease;
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   background-repeat: no-repeat;
 }
 
@@ -114,8 +114,7 @@ table {
   display: none;
 }
 
-.content .container,
-.subscribe .container {
+.content .container {
   font-family: Roboto, Roboto, serif;
   padding: 2rem;
   display: block;
@@ -131,21 +130,6 @@ table {
 
 @media (min-width: 1000px) {
   .content .container {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 956px) {
-  .subscribe .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media (min-width: 1000px) {
-  .subscribe .container {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -195,166 +179,6 @@ body.sidebar .content[role=main] .container {
     margin-left: calc(-100vw / 2 + 1000px / 2);
     margin-right: calc(-100vw / 2 + 1000px / 2);
   }
-}
-
-.subscribe {
-  background-color: #51b698;
-  position: relative;
-}
-
-.subscribe:before {
-  transition: all 100ms ease;
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-image: url(../../assets/img/subscribe-background.jpg);
-  opacity: 1;
-}
-
-.subscribe__prefix {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 5rem 0;
-  overflow: hidden;
-  opacity: 1;
-}
-
-.subscribe__prefix .btn {
-  padding: 1rem;
-}
-
-.subscribe__embed {
-  height: 0;
-  opacity: 0;
-  position: relative;
-  overflow: hidden;
-}
-
-@media (min-width: 956px) {
-  .subscribe__embed__close {
-    position: absolute;
-    top: 0;
-    right: -2rem;
-  }
-}
-
-.subscribe__embed__form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.subscribe__embed__form form {
-  width: 100%;
-}
-
-.subscribe__embed__form form input {
-  font-family: Roboto, Roboto, serif;
-  width: 100%;
-  border: 2px solid #FFF;
-  padding: .5rem 1rem;
-  margin-bottom: .75rem;
-  background-color: transparent;
-  color: #FFF;
-  font-weight: 400;
-  font-size: 2rem;
-  -webkit-appearance: none;
-}
-
-.subscribe__embed__form form input::-webkit-input-placeholder {
-  font-family: Roboto, Roboto, serif;
-  color: #FFF;
-  font-weight: 400;
-  font-size: 2rem;
-}
-
-.subscribe__embed__form form input:-moz-placeholder {
-  font-family: Roboto, Roboto, serif;
-  color: #FFF;
-  font-weight: 400;
-  font-size: 2rem;
-}
-
-.subscribe__embed__form form input::-moz-placeholder {
-  font-family: Roboto, Roboto, serif;
-  color: #FFF;
-  font-weight: 400;
-  font-size: 2rem;
-}
-
-.subscribe__embed__form form input:-ms-input-placeholder {
-  font-family: Roboto, Roboto, serif;
-  color: #FFF;
-  font-weight: 400;
-  font-size: 2rem;
-}
-
-.subscribe__embed__form form input.btn {
-  width: 100%;
-  margin-right: 0;
-}
-
-.subscribe.embed:before {
-  opacity: 0;
-}
-
-.subscribe.embed .subscribe__embed {
-  opacity: 1;
-  height: auto;
-  overflow: visible;
-}
-
-.subscribe.embed .subscribe__prefix {
-  height: 0;
-  opacity: 0;
-  padding: 0;
-}
-
-.subscribe .container h2,
-.subscribe .container p {
-  color: #FFF;
-  font-weight: 600;
-}
-
-.subscribe .container h2 {
-  font-size: 3rem;
-}
-
-.subscribe .container p {
-  font-size: 1.5rem;
-}
-
-.subscribe .container a {
-  color: #FEA541;
-}
-
-.subscribe .container a:hover {
-  color: #FFF;
-}
-
-.subscribe .container .subscription-link {
-  color: #001D5E;
-}
-
-.subscribe .container .btn {
-  background: #FFF;
-  color: #5fbd99;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 2rem;
-}
-
-.subscribe .container .btn:hover {
-  background: #001E61;
-  color: #FFF;
 }
 
 .flex-container a:active,

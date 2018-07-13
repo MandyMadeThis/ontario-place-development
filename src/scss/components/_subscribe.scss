@@ -1,0 +1,142 @@
+.subscribe {
+  font-family: Roboto, Roboto, serif;
+  background-color: #51b698;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../../assets/img/subscribe-background.jpg);
+  padding: 2rem 0;
+
+  h2,
+  p {
+    color: #FFF;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    background: #FFF;
+    color: $teal;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.2rem;
+
+    &:hover {
+      background: $navy;
+      color: #FFF;
+    }
+  }
+}
+
+.subscribe__prefix {
+  position: relative;
+  text-align: center;
+  opacity: 1;
+
+  h2 {
+    text-transform: capitalize;
+  }
+
+  .btn {
+    padding: 0.8rem 1rem;
+    text-align: center;
+  }
+}
+
+.subscribe__embed {
+  height: 0;
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+
+  > * {
+    padding: 20px;
+  }
+
+  a {
+    color: $navy;
+
+    &:hover {
+      color: #FFF;
+    }
+  }
+}
+
+.subscribe__embed__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.subscribe__embed__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    border: 2px solid #FFF;
+    padding: .5rem 1rem;
+    margin-bottom: 0.75rem;
+    background-color: transparent;
+    color: #FFF;
+    font-weight: 400;
+    font-size: 1.5rem;
+    -webkit-appearance: none;
+  }
+
+  input::-webkit-input-placeholder {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  input:-moz-placeholder {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+
+  input::-moz-placeholder {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+
+  input:-ms-input-placeholder {
+    color: #FFF;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+
+  input.btn {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+.subscribe.embed {
+  &:before {
+    opacity: 0;
+  }
+
+  .subscribe__embed {
+    opacity: 1;
+    height: auto;
+    overflow: visible;
+  }
+
+  .subscribe__prefix {
+    height: 0;
+    opacity: 0;
+    padding: 0;
+  }
+}

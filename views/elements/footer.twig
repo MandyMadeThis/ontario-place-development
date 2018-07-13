@@ -1,6 +1,7 @@
+{% if post.get_field('show_subscription') %}
+  {% include "partials/subscribe.twig" with {'options': options} %}
+{% endif %}
 {% include "partials/footer-social.twig" with { 'menu': social_nav } %}
 {% include "partials/footer-legal.twig" with { 'footer_menu': footer_nav, 'legal_menu': legal_nav, 'options': options } %}
-
-
 <!-- /footer -->
 {% include "partials/google-analytics.twig" %}
