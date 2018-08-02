@@ -46,6 +46,7 @@
             <div class="post__listing">
               <div class="container">
                 {% for widget in post.get_field('listing_widget') %}
+                 
                   {% if widget.load_more %}
                     {{ fn('do_shortcode', "[widget widget_name=\"Post_Listing_Widget\" use_page_args=\"true\" index=\"#{loop.index0}\" post=\"#{post.ID}\"]") }}
                   {% else %}

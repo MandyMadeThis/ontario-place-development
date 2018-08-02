@@ -29,7 +29,7 @@
 .upcoming-posts {
   @media (min-width: 956px) {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 
   .post__item {
@@ -43,8 +43,8 @@
     display: block;
 
     @media (min-width: 956px) {
-      margin: 0;
-      flex: 1;
+      margin: 15px;
+      width: calc(33.33% - 30px);
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -52,14 +52,6 @@
       > * {
         flex: 1 1 100%;
       }
-    }
-  }
-
-  .post__item + .post__item {
-    margin-top: 25px;
-    @media (min-width: 956px) {
-      margin-top: 0;
-      margin-left: 25px;
     }
   }
 

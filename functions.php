@@ -67,8 +67,7 @@ add_filter('timber_context', function ($data) {
     return $data;
 });
 
-function get_page_sidebar($homes, $menu)
-{
+function get_page_sidebar($homes, $menu) {
     global $post;
     if (!$post) {
         return null;
@@ -93,8 +92,7 @@ function get_page_sidebar($homes, $menu)
     return null;
 }
 
-function get_breadcrumbs($post, $post_homes)
-{
+function get_breadcrumbs($post, $post_homes) {
     if (pll_current_language('slug') === 'en') {
         $breadcrumbs = array(
         array(
@@ -135,48 +133,43 @@ function get_breadcrumbs($post, $post_homes)
     );
     return $breadcrumbs;
 }
+
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page('Site Info');
 }
 
-function load_script($name, $src, $footer = true)
-{
+function load_script($name, $src, $footer = true) {
     wp_register_script($name, $src, array(), null, $footer);
     wp_enqueue_script($name);
 }
 
-function load_style($name, $src, $media = 'all')
-{
+function load_style($name, $src, $media = 'all') {
     wp_register_style($name, $src, false, null, $media);
     wp_enqueue_style($name);
 }
 add_action('admin_enqueue_scripts', 'load_admin_assets');
 
-function load_styles()
-{
-    load_style('ontario-place', get_stylesheet_directory_uri() . '/assets/css/style.min.css');
+function load_styles() {
+  load_style('ontario-place', get_stylesheet_directory_uri() . '/assets/css/style.min.css');
 }
 add_action('wp_enqueue_scripts', 'load_styles');
 
-function load_scripts()
-{
-    wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), false, true);
-    wp_register_script('jquery-core', '/wp/wp-includes/js/jquery/jquery.js', array(), false, 0);
-    wp_register_script('jquery-migrate', '/wp/wp-includes/js/jquery/jquery-migrate.js', array(), false, 0);
+function load_scripts() {
+  wp_register_script('jquery', false, array('jquery-core', 'jquery-migrate'), false, true);
+  wp_register_script('jquery-core', '/wp/wp-includes/js/jquery/jquery.js', array(), false, 0);
+  wp_register_script('jquery-migrate', '/wp/wp-includes/js/jquery/jquery-migrate.js', array(), false, 0);
 
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('jquery-core');
-    wp_enqueue_script('jquery-migrate');
+  wp_enqueue_script('jquery');
+  wp_enqueue_script('jquery-core');
+  wp_enqueue_script('jquery-migrate');
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
-function load_footer_scripts()
-{
-    load_script('ontario-place', get_stylesheet_directory_uri() . '/assets/js/script.min.js', true);
+function load_footer_scripts() {
+  load_script('ontario-place', get_stylesheet_directory_uri() . '/assets/js/script.min.js', true);
 }
 
-function wp_trim_content($title, $append, $size = 110)
-{
+function wp_trim_content($title, $append, $size = 110) {
     $title = wp_trim_words($title);
     if (strlen($title) > $size) {
         return substr($title, 0, $size).$append;
@@ -184,14 +177,13 @@ function wp_trim_content($title, $append, $size = 110)
     return $title;
 }
 
-function asset_path($path)
-{
+function asset_path($path) {
     return get_stylesheet_directory_uri() . '/assets/' . $path;
 }
 
 add_shortcode('widget', 'widget');
-function widget($atts)
-{
+
+function widget($atts) {
     global $wp_widget_factory;
 
     extract(shortcode_atts(array(
@@ -228,8 +220,7 @@ function localize_date($date, $format) {
     return strftime($format, strtotime($date));
 }
 
-function get_page_slider($post_id = null)
-{
+function get_page_slider($post_id = null) {
     global $post;
 
     if (!$post_id && $post) {

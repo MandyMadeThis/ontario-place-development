@@ -1,9 +1,9 @@
 {% if upcoming_posts %}
-    <div class="posts upcoming-posts {{ upcoming_post_types | join(' ') }}">
-        {% for p in upcoming_posts %}
-            {% include["list-views/upcoming-#{p.post_type}.twig",
-                "list-views/#{p.post_type}.twig",
-                'list-views/post.twig']with {'p': p, 'button_label': upcoming_button_label, 'styled_view': upcoming_card_view} %}
-        {% endfor %}
-    </div>
+  <div class="posts upcoming-posts {{ upcoming_post_types | join(' ') }}">
+      {% for p in upcoming_posts %}
+          {% include["list-views/upcoming-#{p.post_type}.twig",
+              "list-views/#{p.post_type}.twig",
+              'list-views/post.twig']with {'p': p, 'button_label': upcoming_button_label, 'styled_view': upcoming_card_view} %}
+      {% endfor %}
+  </div>
 {% endif %}

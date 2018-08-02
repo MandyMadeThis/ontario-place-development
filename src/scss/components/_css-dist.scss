@@ -119,21 +119,9 @@ table {
   padding: 2rem;
   display: block;
   width: 100%;
-}
-
-@media (min-width: 956px) {
-  .content .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media (min-width: 1000px) {
-  .content .container {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body.single-tribe_events .content[role=main] .container {
