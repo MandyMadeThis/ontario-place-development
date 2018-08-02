@@ -2437,9 +2437,14 @@ body.menu--open .menu {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg); }
 
+@media (min-width: 956px) {
+  .post__listing {
+    padding-top: 25px;
+    padding-bottom: 25px; } }
+
 .post__listing .view-all-btn {
   display: inline-block;
-  border: 2px solid;
+  border: 2px solid transparent;
   font-weight: 600;
   text-transform: uppercase;
   -webkit-transition: all 250ms ease;
@@ -2447,7 +2452,7 @@ body.menu--open .menu {
   padding: 0.8rem 1rem; }
 
 .post__listing .view-all-btn {
-  background-color: #179d9a;
+  background-color: #0f5169;
   color: #fff;
   margin: 25px auto 50px; }
   @media (min-width: 956px) {
@@ -2455,7 +2460,11 @@ body.menu--open .menu {
       margin: 50px auto; } }
   .post__listing .view-all-btn:hover, .post__listing .view-all-btn:focus {
     background-color: transparent;
-    color: #179d9a; }
+    color: #0f5169;
+    border-color: #0f5169; }
+
+.post__listing.events__wrapper {
+  background-color: #c6e4cc; }
 
 @media (min-width: 956px) {
   .upcoming-posts {

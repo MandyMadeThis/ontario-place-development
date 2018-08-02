@@ -43,29 +43,31 @@
             {% include "elements/accordion.twig" with {accordion: post.get_field('accordion')} %}
           {% endif %}
           {% if post.get_field('listing_widget') %}
-            <div class="post__listing">
-              <div class="container">
-                {% for widget in post.get_field('listing_widget') %}
-                 
-                  {% if widget.load_more %}
-                    {{ fn('do_shortcode', "[widget widget_name=\"Post_Listing_Widget\" use_page_args=\"true\" index=\"#{loop.index0}\" post=\"#{post.ID}\"]") }}
-                  {% else %}
-                    {% if widget.label %}
-                      <h2 class="title--styled">{{widget.label}}</h2>
-                      <hr>
+            
+            {% for widget in post.get_field('listing_widget') %}
+              <div class="post__listing{% if widget.post_types[0] == 'tribe_events' %} events__wrapper{% endif %}">
+                <div class="container">
+                   
+                    {% if widget.load_more %}
+                      {{ fn('do_shortcode', "[widget widget_name=\"Post_Listing_Widget\" use_page_args=\"true\" index=\"#{loop.index0}\" post=\"#{post.ID}\"]") }}
+                    {% else %}
+                      {% if widget.label %}
+                        <h2 class="title--styled">{{widget.label}}</h2>
+                        <hr>
+                      {% endif %}
+                    
+                      {{ fn('do_shortcode', "[widget widget_name=\"Upcoming_Posts_Widget\" use_page_args=\"true\" index=\"#{loop.index0}\" post=\"#{post.ID}\"]") }}
+    
                     {% endif %}
-                  
-                    {{ fn('do_shortcode', "[widget widget_name=\"Upcoming_Posts_Widget\" use_page_args=\"true\" index=\"#{loop.index0}\" post=\"#{post.ID}\"]") }}
-  
-                  {% endif %}
-                  {% if widget.link and widget.link_label %}
-                    <div class="text-center">
-                      <a href="{{widget.link}}" class="view-all-btn">{{widget.link_label}}</a>
-                    </div>
-                  {% endif %}
-                {% endfor %}
+                    {% if widget.link and widget.link_label %}
+                      <div class="text-center">
+                        <a href="{{widget.link}}" class="view-all-btn">{{widget.link_label}}</a>
+                      </div>
+                    {% endif %}
+                </div>
               </div>
-            </div>
+            {% endfor %}
+
           {% endif %}
           <!-- /wrapper -->
         </section>

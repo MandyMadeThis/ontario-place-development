@@ -1,8 +1,12 @@
 .post__listing {
+  @media (min-width: 956px) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 
   .view-all-btn {
     display: inline-block;
-    border: 2px solid;
+    border: 2px solid transparent;
     font-weight: 600;
     text-transform: uppercase;
     transition: all 250ms ease;
@@ -10,7 +14,7 @@
   }
 
   .view-all-btn {
-    background-color: $teal; 
+    background-color: #0f5169; 
     color: #fff;
     margin: 25px auto 50px;
 
@@ -21,8 +25,13 @@
     &:hover,
     &:focus {
       background-color: transparent;
-      color: $teal;
+      color: #0f5169;
+      border-color: #0f5169;
     }
+  }
+
+  &.events__wrapper {
+    background-color: #c6e4cc;
   }
 }
 

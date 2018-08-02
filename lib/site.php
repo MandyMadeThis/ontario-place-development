@@ -1,12 +1,9 @@
 <?php
-class Site extends TimberSite
-{
-    public static function register_post_types()
-    {
+class Site extends TimberSite{
+    public static function register_post_types() {
     }
 
-    public static function register_menus()
-    {
+    public static function register_menus() {
         register_nav_menus(array(
             'primary' => 'Primary Menu',
             'sidebar' => 'Sidebar Menu',
@@ -16,8 +13,7 @@ class Site extends TimberSite
         ));
     }
 
-    public static function register_sidebars()
-    {
+    public static function register_sidebars() {
         $before_title = '<h2 class="widget-title">';
         $after_title = '</h2>';
         $before_widget = '<div class="widget widget-type-%2$s">';
@@ -65,8 +61,7 @@ class Site extends TimberSite
         }
     }
 
-    public static function register_widgets()
-    {
+    public static function register_widgets() {
         $widgets = array(
             'widget' => 'WPH_Widget',
             'post_listing' => 'Post_Listing_Widget',
@@ -81,8 +76,7 @@ class Site extends TimberSite
         }
     }
 
-    public static function add_image_sizes()
-    {
+    public static function add_image_sizes() {
         add_image_size('recent_post_large', 679, 342, $crop = true); // Posts in recent posts widget
         add_image_size('recent_post_small', 284, 189, $crop = true); // Posts in recent posts widget
         add_image_size('recent_post', 430, 322, $crop = true);       // Posts in recent posts listing
