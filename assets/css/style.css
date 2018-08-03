@@ -2437,10 +2437,8 @@ body.menu--open .menu {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg); }
 
-@media (min-width: 956px) {
-  .post__listing {
-    padding-top: 25px;
-    padding-bottom: 25px; } }
+.post__listing .title--styled {
+  margin-top: 0; }
 
 .post__listing .view-all-btn {
   display: inline-block;
@@ -2454,10 +2452,7 @@ body.menu--open .menu {
 .post__listing .view-all-btn {
   background-color: #0f5169;
   color: #fff;
-  margin: 25px auto 50px; }
-  @media (min-width: 956px) {
-    .post__listing .view-all-btn {
-      margin: 50px auto; } }
+  margin: 30px auto 0; }
   .post__listing .view-all-btn:hover, .post__listing .view-all-btn:focus {
     background-color: transparent;
     color: #0f5169;
@@ -2510,8 +2505,9 @@ body.menu--open .menu {
 .upcoming-posts .post__item__title {
   color: #0c0935;
   font-weight: 600;
-  font-size: 1.4rem;
-  margin-bottom: 2rem; }
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0.6rem; }
 
 .upcoming-posts .post__item__link {
   text-transform: uppercase;

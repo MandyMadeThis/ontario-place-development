@@ -1,7 +1,7 @@
 .post__listing {
-  @media (min-width: 956px) {
-    padding-top: 25px;
-    padding-bottom: 25px;
+
+  .title--styled {
+    margin-top: 0;
   }
 
   .view-all-btn {
@@ -16,11 +16,7 @@
   .view-all-btn {
     background-color: #0f5169; 
     color: #fff;
-    margin: 25px auto 50px;
-
-    @media (min-width: 956px) {
-      margin: 50px auto;
-    }
+    margin: 30px auto 0;
     
     &:hover,
     &:focus {
@@ -74,8 +70,9 @@
   .post__item__title {
     color: $navy;
     font-weight: 600;
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0.6rem;
   }
 
   .post__item__link {
