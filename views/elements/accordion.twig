@@ -1,18 +1,17 @@
 {% if user or post.post_status =='publish' %}
-<ul class="accordion__wrapper">
+  <ul class="accordion__wrapper">
     {% for detail in accordion %}
-        <li class="accordion" style="background-color: {{detail.color}}">
-            <div class="accordion__header">
-                <div class="container">
-                    <h3 class="accordion__header__title">{{detail.label}}</h3>
-                    <span class="accordion__header__excerpt">{{detail.excerpt}}</span>
-                </div>
-                <div class="accordion__dropdown"></div>
-            </div>
-            <div class="accordion__content" style="display: none;">
-                <div class="container">{{ detail.content }}</div>
-            </div>
-        </li>
+      <li class="accordion" style="background-color: {{detail.color}}">
+        <div class="container">
+          <div class="accordion__header">
+            <h3 class="accordion__title">{{detail.label}}</h3>
+            {% if detail.excerpt %}
+              <span class="accordion__excerpt">{{detail.excerpt}}</span>
+            {% endif %}
+          </div>
+          <div class="accordion__content">{{ detail.content }}</div>
+        </div>
+      </li>
     {% endfor %}
-</ul>
+  </ul>
 {% endif %}

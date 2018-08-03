@@ -36,5 +36,5 @@ gulp.task('styles', function(){
 
 gulp.task('default', ['browser-sync'], function(){
   gulp.watch("src/scss/**/*.scss", ['styles']);
-  gulp.watch("*.php", ['bs-reload']);
+  gulp.watch("/**/*.php", ['bs-reload']);
 });
