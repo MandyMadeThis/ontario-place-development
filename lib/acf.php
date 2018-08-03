@@ -43,25 +43,6 @@ if (function_exists('acf_add_local_field_group')):
                         'maxlength' => ''
                     ),
                     array(
-                        'key' => 'field_583b9d4a91gvahjk6',
-                        'label' => 'Excerpt',
-                        'name' => 'excerpt',
-                        'type' => 'text',
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => ''
-                        ),
-                        'default_value' => '',
-                        'placeholder' => '',
-                        'prepend' => '',
-                        'append' => '',
-                        'maxlength' => ''
-                    ),
-                    array(
                         'key' => 'field_583b9d4a0dsahjk6',
                         'label' => 'Content',
                         'name' => 'content',
@@ -78,35 +59,6 @@ if (function_exists('acf_add_local_field_group')):
                         'tabs' => 'all',
                         'toolbar' => 'full',
                         'media_upload' => 1
-                    ),
-                    array(
-                        'key' => 'field_5940044d981g6',
-                        'label' => 'Background Color',
-                        'name' => 'color',
-                        'type' => 'select',
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => ''
-                        ),
-                        'choices' => array(
-                            '#0c0935' => 'Dark Blue',
-                            '#0f5169' => 'Blue',
-                            '#179d9a' => 'Teal',
-                            '#58b884' => 'Green'
-                        ),
-                        'default_value' => array(
-                            0 => '#0c0834'
-                        ),
-                        'allow_null' => 0,
-                        'multiple' => 0,
-                        'ui' => 0,
-                        'ajax' => 0,
-                        'return_format' => 'value',
-                        'placeholder' => ''
                     )
                 )
             ),

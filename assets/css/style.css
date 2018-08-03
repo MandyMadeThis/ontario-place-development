@@ -325,7 +325,8 @@ a {
   color: #057da2;
   text-decoration: none; }
 
-a:hover {
+a:hover,
+a:focus {
   color: #FEA541; }
 
 .font-light {
@@ -2314,10 +2315,12 @@ body.menu--open .menu {
 .accordion__wrapper {
   margin: 0;
   padding-left: 0;
-  color: #FFF; }
+  color: #0c0935; }
 
 .accordion {
   list-style-type: none; }
+  .accordion:nth-of-type(odd) {
+    background-color: #f2f2f2; }
   @media screen and (max-width: 955px) {
     .accordion .container {
       padding-left: 10px;
@@ -2367,7 +2370,6 @@ body.menu--open .menu {
   .accordion__content p {
     line-height: 1.7;
     letter-spacing: 0.01rem;
-    font-weight: 600;
     margin: 0; }
   .accordion__content p + p {
     margin-top: 1.2rem; }
@@ -2375,14 +2377,6 @@ body.menu--open .menu {
     padding-left: 20px; }
   .accordion__content li {
     list-style-type: disc; }
-  .accordion__content a {
-    color: #FFF;
-    text-decoration: underline; }
-    .accordion__content a:hover {
-      color: #FFF;
-      text-decoration: none; }
-  .accordion__content strong {
-    text-transform: uppercase; }
   .accordion__content img.alignnone {
     padding: 0;
     margin: 0 auto; }

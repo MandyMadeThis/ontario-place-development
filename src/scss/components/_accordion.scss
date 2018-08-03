@@ -1,11 +1,15 @@
 .accordion__wrapper {
   margin: 0;
   padding-left: 0;
-  color: #FFF;
+  color: $navy;
 }
 
 .accordion {
   list-style-type: none;
+
+  &:nth-of-type(odd) {
+    background-color: darken(#fff, 5%);
+  }
 
   .container {
     @media screen and (max-width: 955px) {
@@ -66,7 +70,6 @@
   p {
     line-height: 1.7;
     letter-spacing: 0.01rem;
-    font-weight: 600;
     margin: 0;
   }
 
@@ -80,20 +83,6 @@
 
   li {
     list-style-type: disc;
-  }
-
-  a {
-    color: #FFF;
-    text-decoration: underline;
-
-    &:hover {
-      color: #FFF;
-      text-decoration: none;
-    }
-  }
-
-  strong {
-    text-transform: uppercase;
   }
 
   img.alignnone {
