@@ -1,0 +1,76 @@
+.single-tribe_events {
+  .hero_image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .event__header__main {
+    text-align: center;
+    max-height: 250px;
+    margin-bottom: 2rem;
+  }
+
+  .event__header__links {
+    display: block;
+    margin-bottom: 10px;
+
+    @media (min-width: 650px) {
+      display: inline-block;
+    }
+
+    .fa {
+      margin-right: 0.5em;
+    }
+  }
+
+  .btn--event-social {
+    display: inline-block;
+    border: 1px solid;
+    background: 0 0;
+    padding: .5rem 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0.5rem;
+    transition: all .1s ease;
+    width: 90%;
+    margin-bottom: 1rem;
+
+    @media (min-width: 650px) {
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  .event__meta {
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .item__value {
+      margin-left: 1rem;
+    }
+
+    .tribe-events-address {
+      font-style: normal;
+    }
+  }
+
+  .google_map {
+    margin: 2rem 0;
+  }
+
+  .event__meta {
+    .item {
+      margin-bottom: 0.4rem;
+    }
+    .item__header {
+      font-weight: 600;
+    }
+  }
+}

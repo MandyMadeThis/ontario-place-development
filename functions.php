@@ -147,7 +147,8 @@ function load_style($name, $src, $media = 'all') {
     wp_register_style($name, $src, false, null, $media);
     wp_enqueue_style($name);
 }
-add_action('admin_enqueue_scripts', 'load_admin_assets');
+
+// add_action('admin_enqueue_scripts', 'load_admin_assets');
 
 function load_styles() {
   load_style('ontario-place', get_stylesheet_directory_uri() . '/assets/css/style.min.css');

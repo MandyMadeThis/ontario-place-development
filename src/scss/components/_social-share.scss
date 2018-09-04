@@ -1,0 +1,107 @@
+.social-share {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.social-share a {
+  width: 100%;
+  position: relative;
+  color: #FFF;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none !important;
+  transition: all 100ms ease;
+  text-transform: uppercase;
+  padding: 10px 0;
+  height: 40px;
+  display: inline-block;
+}
+
+@media (min-width: 956px) {
+  .social-share a {
+    width: 50%;
+    max-width: 400px;
+  }
+}
+
+.social-share a:hover {
+  color: #FFF;
+}
+
+.social-share a.facebook {
+  background-color: #415787;
+}
+
+.social-share a.facebook .icon .fa,
+.social-share a.facebook:hover {
+  background-color: #516da9;
+}
+
+.social-share a.facebook:hover .icon .fa {
+  background-color: #748aba;
+}
+
+.social-share a.twitter {
+  background-color: #359ccc;
+}
+
+.social-share a.twitter .icon .fa,
+.social-share a.twitter:hover {
+  background-color: #42c3ff;
+}
+
+.social-share a.twitter:hover .icon .fa {
+  background-color: #68cfff;
+}
+
+.social-share a .icon {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 20px 0;
+}
+
+@media (min-width: 956px) {
+  .social-share a .icon {
+    width: 30%;
+    padding: 0;
+  }
+}
+
+.social-share a .icon:before {
+  content: "";
+  display: block;
+  margin-top: 100%;
+}
+
+.social-share a .icon .fa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 100ms ease;
+  transition: background-color 200ms ease;
+}
+
+.social-share a .text {
+  width: 70%;
+  margin-left: 100px;
+  display: none;
+}
+
+@media (min-width: 956px) {
+  .social-share a .text {
+    display: inline-block;
+  }
+}
