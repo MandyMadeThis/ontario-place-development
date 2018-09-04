@@ -14,14 +14,14 @@
                     <div class="event__header__main">
                         <h2>{{post.title}}</h2>
                         <div class="event__header__links">
+                        {% if post._EventURL %}
+                            <a class="btn--event-social" href="{{fn('esc_url', post._EventURL)}}" target="_blank">
+                                {{fn('pll_e', 'Event URL')}}</a>
+                        {% endif %}
                             <a class="btn--event-social" href="{{fn('esc_url', fn('tribe_get_gcal_link', post.ID))}}" target="_blank">
                                 <i class="fa fa-plus-circle" aria-hidden="true"></i>{{fn('pll_e', 'Google Calendar')}}</a>
                             <a class="btn--event-social" href="{{fn('esc_url', fn('tribe_get_single_ical_link'))}}" target="_blank">
                                 <i class="fa fa-plus-circle" aria-hidden="true"></i>{{fn('pll_e', 'iCal Export')}}</a>
-                            {% if post._EventURL %}
-                                <a class="btn--event-social" href="{{fn('esc_url', post._EventURL)}}" target="_blank">
-                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>{{fn('pll_e', 'Event URL')}}</a>
-                            {% endif %}
                         </div>
                     </div>
                     {% if post.thumbnail %}
